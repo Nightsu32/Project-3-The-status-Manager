@@ -1,40 +1,147 @@
 body {
+  margin: 0;
+  padding: 40px 20px;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  padding-top: 20px;
+  background: linear-gradient(135deg, #eef2f7, #dfe9f3);
+  color: #1f2933;
 }
 
 #app-container {
   width: 90%;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
-#status-output {
-  border: 1px solid #ccc;
+#main-title {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: #102a43;
+  padding: 12px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#control-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
   padding: 15px;
-  margin-top: 15px;
-  background-color: #e0f7fa;
+  background-color: #f7fafc;
+  border: 2px solid #2f80ed;
+  border-radius: 12px;
+  min-height: 80px;
+}
+
+/* Task 2: Hidden class - when toggled, flash red so it's visible */
+.hidden {
+  display: none;
+}
+
+/* Makes the blank space visible when panel is hidden */
+#control-panel.hidden {
+  display: flex;
+  background-color: red;
+  opacity: 0.6;
 }
 
 #control-panel button,
 #control-panel a {
-  padding: 10px 15px;
-  margin: 5px;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
+  padding: 12px 18px;
+  border-radius: 10px;
   text-decoration: none;
-  display: inline-block; /* Ensure anchor tag acts like a button */
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-block;
 }
 
-/* --- Task 2 Requirement: The Hiding Class --- */
-/* This class must be defined to enable the toggle functionality later. */
-.hidden {
-  /* Sets the element to be completely invisible and not take up space. */
-  display: none;
+#toggle-button {
+  background-color: #2f80ed;
+  color: white;
+  border: none;
+}
+
+#toggle-button:hover {
+  background-color: #1c6dd0;
+}
+
+#timer-button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+}
+
+#timer-button:hover {
+  background-color: #1f8b4d;
+}
+
+#status-output {
+  border: 1px solid #bcdff1;
+  padding: 16px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  background: #eaf8ff;
+  border-radius: 12px;
+}
+
+#status-output p {
+  margin-top: 0;
+  font-weight: bold;
+  color: #0b5c7a;
+}
+
+#status-output span {
+  display: inline-block;
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: #1f2933;
+}
+
+h2 {
+  margin-bottom: 12px;
+  color: #243b53;
+}
+
+#item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#item-list li {
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  background-color: #f8fbff;
+  border: 1px solid #d9e2ec;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  #app-container {
+    padding: 20px;
+  }
+
+  #main-title {
+    font-size: 1.6rem;
+  }
+
+  #control-panel {
+    flex-direction: column;
+  }
+
+  #control-panel button,
+  #control-panel a {
+    width: 100%;
+    text-align: center;
+  }
 }
